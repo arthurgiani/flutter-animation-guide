@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animation_guide/components/custom_button.dart';
+import 'package:flutter_animation_guide/modules/example_gallery/example_gallery_intro_page.dart';
 import 'package:flutter_animation_guide/navigation.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -48,6 +49,12 @@ class _LandingPageState extends State<LandingPage> {
                   child: CustomButton(
                       text: "3. Explicit Animations",
                       onPressed: () => _showCustomSnackBar())),
+              SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.6,
+                  child: CustomButton(
+                      text: "4. Example Gallery",
+                      onPressed: () =>
+                          push(context, ExampleGalleryIntroPage())))
             ],
           ),
         ),
