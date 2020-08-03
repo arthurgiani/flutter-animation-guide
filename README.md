@@ -1,16 +1,14 @@
 # flutter_animation_guide
 
-A new Flutter project.
+A tutorial in app format with interactive examples to show how **Animations can be done in flutter**, and when you can use each type.
 
-## Getting Started
+## What will I learn in this repository?
 
-This project is a starting point for a Flutter application.
+- [x] Implicit Animations
+- [ ] How to use TweenAnimationBuilder and create your custom implicit animations (**To be done!**).
+- [ ] Control your animations explicitelly using **AnimationController and Explicit Animations** (**To be done!**).
 
-A few resources to get you started if this is your first Flutter project:
+![demo-app1](https://github.com/arthurgiani/flutter-animation-guide/blob/master/demo-app1.gif) ![demo_app2](https://github.com/arthurgiani/flutter-animation-guide/blob/master/demo-app2.gif)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Contributions
+The initial page of the application will contain an exclusive area for contributions where you can create your examples applying animations in flutter and make a pull request for this repository, in order to create a gallery of animation examples for community use and consultation.
