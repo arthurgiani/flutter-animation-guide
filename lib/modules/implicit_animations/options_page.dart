@@ -8,7 +8,7 @@ import 'package:flutter_animation_guide/modules/implicit_animations/animated_opa
 import 'package:flutter_animation_guide/modules/implicit_animations/animated_positioned_page.dart';
 import 'package:flutter_animation_guide/modules/implicit_animations/animated_size_page.dart';
 import 'package:flutter_animation_guide/modules/implicit_animations/curves_page.dart';
-import 'package:flutter_animation_guide/modules/implicit_animations/implicit_animations_intro_page.dart';
+import 'package:flutter_animation_guide/modules/implicit_animations/intro_page.dart';
 import 'package:flutter_animation_guide/navigation.dart';
 
 class ImplicitAnimationsOptionsPage extends StatefulWidget {
