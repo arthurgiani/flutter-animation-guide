@@ -5,7 +5,7 @@ A tutorial in app format with interactive examples to show how **Animations can 
 ## What will I learn in this repository?
 
 - [x] Implicit Animations
-- [ ] How to use TweenAnimationBuilder and create your custom implicit animations (**To be done!**).
+- [x] How to use TweenAnimationBuilder and create your custom implicit animations
 - [ ] Control your animations explicitelly using **AnimationController and Explicit Animations** (**To be done!**).
 
 ![demo-app1](https://github.com/arthurgiani/flutter-animation-guide/blob/master/demo-app1.gif) ![demo_app2](https://github.com/arthurgiani/flutter-animation-guide/blob/master/demo-app2.gif)
