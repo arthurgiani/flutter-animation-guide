@@ -11,9 +11,11 @@ class CustomButton extends StatelessWidget {
       color: Theme.of(context).primaryColor,
       child: Row(
         children: <Widget>[
-          Text(
-            text,
-            style: TextStyle(color: Colors.white),
+          Flexible(
+            child: Text(
+              text,
+              style: TextStyle(color: Colors.white),
+            ),
           ),
         ],
       ),

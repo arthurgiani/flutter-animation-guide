@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animation_guide/components/custom_button.dart';
 import 'package:flutter_animation_guide/modules/example_gallery/example_gallery_intro_page.dart';
+import 'package:flutter_animation_guide/modules/explicit_animations/options_page.dart';
 import 'package:flutter_animation_guide/modules/tween_animation_builder/options_page.dart';
 import 'package:flutter_animation_guide/navigation.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -50,7 +51,7 @@ class _LandingPageState extends State<LandingPage> {
                   width: MediaQuery.of(context).size.width * 0.6,
                   child: CustomButton(
                       text: "3. Explicit Animations",
-                      onPressed: () => _showCustomSnackBar())),
+                      onPressed: () => push(context, ExplicitAnimationsOptionsoPage()))),
               SizedBox(
                   width: MediaQuery.of(context).size.width * 0.6,
                   child: CustomButton(
@@ -62,12 +63,5 @@ class _LandingPageState extends State<LandingPage> {
         ),
       ),
     );
-  }
-
-  void _showCustomSnackBar() {
-    final snackBar = SnackBar(
-      content: Text("Available soon"),
-    );
-    _scaffoldKey.currentState.showSnackBar(snackBar);
   }
 }
