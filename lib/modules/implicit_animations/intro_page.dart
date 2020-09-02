@@ -64,7 +64,7 @@ class _ImplicitAnimationsIntroPageState
             height: 15,
           ),
           Text(
-            "In a nuthsell, when you decide to use an implicit animation widget you're making a trade off between control and simplicity, where an widget will manage all the animation effects for you.",
+            "In a nutshell, when you decide to use an implicit animation widget you're making a trade off between control and simplicity, where an widget will manage all the animation effects for you.",
             style: Theme.of(context).textTheme.bodyText1,
           ),
           SizedBox(
