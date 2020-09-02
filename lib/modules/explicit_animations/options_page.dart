@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animation_guide/components/custom_button.dart';
 import 'package:flutter_animation_guide/components/custom_scaffold.dart';
 import 'package:flutter_animation_guide/modules/explicit_animations/animated_builder.dart';
+import 'package:flutter_animation_guide/modules/explicit_animations/custom_interpolation_page.dart';
 import 'package:flutter_animation_guide/modules/explicit_animations/intro_page.dart';
 import '../../navigation.dart';
 
@@ -31,7 +32,13 @@ class _ExplicitAnimationsOptionsoPageState
                 child: CustomButton(
                     text: "2. AnimatedBuilder",
                     onPressed: () =>
-                        push(context, AnimatedBuilderPage()))), 
+                        push(context, AnimatedBuilderPage()))),
+            SizedBox(
+                width: MediaQuery.of(context).size.width * 0.6,
+                child: CustomButton(
+                    text: "3. Custom Interpolation",
+                    onPressed: () =>
+                        push(context, CustomInterpolationPage()))),  
           ],
         ),
       ),
