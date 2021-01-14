@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animation_guide/components/custom_button.dart';
-import 'package:flutter_animation_guide/modules/example_gallery/example_gallery_intro_page.dart';
 import 'package:flutter_animation_guide/modules/explicit_animations/options_page.dart';
 import 'package:flutter_animation_guide/modules/tween_animation_builder/options_page.dart';
 import 'package:flutter_animation_guide/navigation.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'example_gallery/options_page.dart';
 import 'implicit_animations/options_page.dart';
 
 class LandingPage extends StatefulWidget {
@@ -57,7 +57,7 @@ class _LandingPageState extends State<LandingPage> {
                   child: CustomButton(
                       text: "4. Example Gallery",
                       onPressed: () =>
-                          push(context, ExampleGalleryIntroPage())))
+                          push(context, ExampleGaleryOptionsPage())))
             ],
           ),
         ),
