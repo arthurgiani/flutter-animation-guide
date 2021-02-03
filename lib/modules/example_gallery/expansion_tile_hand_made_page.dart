@@ -9,44 +9,45 @@ class ExpansionTileHandMadePage extends StatefulWidget {
 class _ExpansionTileHandMadePageState extends State<ExpansionTileHandMadePage> with TickerProviderStateMixin {
   List _itemsList = List.generate(5, (i) => i);
 
-  AnimationController controller;
-  Animation<double> heightFactorAnimation;
+  bool _isExpanded = false;
+
+  AnimationController _listAnimationController;
+  Animation<double> _listHeightFactorAnimation;
 
   @override
   void initState() {
     super.initState();
-    controller = AnimationController(vsync: this, duration: Duration(milliseconds: 400));
-    heightFactorAnimation = Tween<double>(begin: 0.2, end: 1).animate(controller);
+    _listAnimationController = AnimationController(vsync: this, duration: Duration(milliseconds: 400));
+    _listHeightFactorAnimation = Tween<double>(begin: 0.2, end: 1).animate(_listAnimationController);
   }
 
   @override
   void dispose() {
-    controller.dispose();
+    _listAnimationController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-        title: Text("Expansion Tile Hand Made"),
+        title: Text("Handmade ExpansionTile"),
         body: Column(
           children: <Widget>[
             Text(
-              "AnimatedSize creates a widget that animates its size to match it child's size. It's very useful to show just a few itens of a list and choose when to show them all or not.",
+              "Example of implementation of an ExpansionTile widget to understand what happens under the hood.",
               style: Theme.of(context).textTheme.bodyText1,
             ),
             SizedBox(
               height: 10,
-            ),
-            Text(
-              "Below this text there's an example where the first item of a list is shown. In order to show all items of this list, just press the button and the animation will be done.",
-              style: Theme.of(context).textTheme.bodyText1,
             ),
             _animatedList(),
             SizedBox(
               height: 20,
             ),
             _expandListButton(),
+            SizedBox(
+              height: 20,
+            ),
           ],
         ));
   }
@@ -55,14 +56,17 @@ class _ExpansionTileHandMadePageState extends State<ExpansionTileHandMadePage> w
     return RaisedButton(
       color: Colors.blue,
       child: Text(
-        "Show all",
+        _isExpanded ? 'Hide all' : 'Show all',
         style: TextStyle(color: Colors.white),
       ),
       onPressed: () {
-        if ([AnimationStatus.forward, AnimationStatus.completed].contains(controller.status)) {
-          controller.reverse();
+        setState(() {
+          _isExpanded = !_isExpanded;
+        });
+        if ([AnimationStatus.forward, AnimationStatus.completed].contains(_listAnimationController.status)) {
+          _listAnimationController.reverse();
         } else {
-          controller.forward();
+          _listAnimationController.forward();
         }
       },
     );
@@ -70,13 +74,13 @@ class _ExpansionTileHandMadePageState extends State<ExpansionTileHandMadePage> w
 
   Widget _animatedList() {
     return AnimatedBuilder(
-      animation: heightFactorAnimation,
+      animation: _listHeightFactorAnimation,
       builder: (context, child) {
         return Container(
           color: Colors.grey[350],
-          child: ClipRRect(
+          child: ClipRect(
             child: Align(
-              heightFactor: heightFactorAnimation.value,
+              heightFactor: _listHeightFactorAnimation.value,
               alignment: Alignment.topLeft,
               child: child,
             ),

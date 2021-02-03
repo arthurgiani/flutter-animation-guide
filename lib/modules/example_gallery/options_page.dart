@@ -1,14 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animation_guide/components/custom_button.dart';
 import 'package:flutter_animation_guide/components/custom_scaffold.dart';
-import 'package:flutter_animation_guide/modules/implicit_animations/animated_align_page.dart';
-import 'package:flutter_animation_guide/modules/implicit_animations/animated_container_page.dart';
-import 'package:flutter_animation_guide/modules/implicit_animations/animated_default_text_style_page.dart';
-import 'package:flutter_animation_guide/modules/implicit_animations/animated_opacity_page.dart';
-import 'package:flutter_animation_guide/modules/implicit_animations/animated_positioned_page.dart';
-import 'package:flutter_animation_guide/modules/implicit_animations/animated_size_page.dart';
-import 'package:flutter_animation_guide/modules/implicit_animations/curves_page.dart';
-import 'package:flutter_animation_guide/modules/implicit_animations/intro_page.dart';
 import 'package:flutter_animation_guide/navigation.dart';
 
 import 'expansion_tile_hand_made_page.dart';
@@ -43,7 +35,7 @@ class _ExampleGaleryOptionsPageState extends State<ExampleGaleryOptionsPage> {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.6,
                     child: CustomButton(
-                      text: "1. Expansion Tile Hand Made",
+                      text: "1. Handmade ExpansionTile",
                       onPressed: () => push(context, ExpansionTileHandMadePage()),
                     ),
                   ),
