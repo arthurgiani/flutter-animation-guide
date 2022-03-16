@@ -3,22 +3,26 @@ import 'package:flutter_animation_guide/components/custom_scaffold.dart';
 
 class ExpansionTileHandMadePage extends StatefulWidget {
   @override
-  _ExpansionTileHandMadePageState createState() => _ExpansionTileHandMadePageState();
+  _ExpansionTileHandMadePageState createState() =>
+      _ExpansionTileHandMadePageState();
 }
 
-class _ExpansionTileHandMadePageState extends State<ExpansionTileHandMadePage> with TickerProviderStateMixin {
+class _ExpansionTileHandMadePageState extends State<ExpansionTileHandMadePage>
+    with TickerProviderStateMixin {
   List _itemsList = List.generate(5, (i) => i);
 
   bool _isExpanded = false;
 
-  AnimationController _listAnimationController;
-  Animation<double> _listHeightFactorAnimation;
+  late final AnimationController _listAnimationController;
+  late final Animation<double> _listHeightFactorAnimation;
 
   @override
   void initState() {
     super.initState();
-    _listAnimationController = AnimationController(vsync: this, duration: Duration(milliseconds: 400));
-    _listHeightFactorAnimation = Tween<double>(begin: 0.2, end: 1).animate(_listAnimationController);
+    _listAnimationController =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 400));
+    _listHeightFactorAnimation =
+        Tween<double>(begin: 0.2, end: 1).animate(_listAnimationController);
   }
 
   @override
@@ -52,18 +56,17 @@ class _ExpansionTileHandMadePageState extends State<ExpansionTileHandMadePage> w
         ));
   }
 
-  RaisedButton _expandListButton() {
-    return RaisedButton(
-      color: Colors.blue,
+  ElevatedButton _expandListButton() {
+    return ElevatedButton(
       child: Text(
         _isExpanded ? 'Hide all' : 'Show all',
-        style: TextStyle(color: Colors.white),
       ),
       onPressed: () {
         setState(() {
           _isExpanded = !_isExpanded;
         });
-        if ([AnimationStatus.forward, AnimationStatus.completed].contains(_listAnimationController.status)) {
+        if ([AnimationStatus.forward, AnimationStatus.completed]
+            .contains(_listAnimationController.status)) {
           _listAnimationController.reverse();
         } else {
           _listAnimationController.forward();

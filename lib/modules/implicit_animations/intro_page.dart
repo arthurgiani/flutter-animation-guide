@@ -9,10 +9,10 @@ class ImplicitAnimationsIntroPage extends StatefulWidget {
 
 class _ImplicitAnimationsIntroPageState
     extends State<ImplicitAnimationsIntroPage> with TickerProviderStateMixin {
-  AnimationController _firstContainerController;
+  late final AnimationController _firstContainerController;
 
-  AnimationController _secondContainerController;
-  AnimationStatus _secondControllerStatus;
+  late final AnimationController _secondContainerController;
+  late AnimationStatus _secondControllerStatus;
 
   @override
   void initState() {
@@ -53,30 +53,22 @@ class _ImplicitAnimationsIntroPageState
             "What implicit animation is?",
             style: Theme.of(context).textTheme.headline1,
           ),
-          SizedBox(
-            height: 20,
-          ),
+          SizedBox(height: 20),
           Text(
             "Implicit animation represents the simplest and easiest way to create visual effects in the widgets of your UI.",
             style: Theme.of(context).textTheme.bodyText1,
           ),
-          SizedBox(
-            height: 15,
-          ),
+          SizedBox(height: 15),
           Text(
             "In a nutshell, when you decide to use an implicit animation widget you're making a trade off between control and simplicity, where an widget will manage all the animation effects for you.",
             style: Theme.of(context).textTheme.bodyText1,
           ),
-          SizedBox(
-            height: 15,
-          ),
+          SizedBox(height: 15),
           Text(
             "A huge amount of widgets that we use on a daily basis as a Flutter developer already have an animated version like: Container, Positioned, Align and many others.",
             style: Theme.of(context).textTheme.bodyText1,
           ),
-          SizedBox(
-            height: 16,
-          ),
+          SizedBox(height: 16),
           Text(
             "When implicit animations will be the best option for me?",
             style: Theme.of(context).textTheme.headline2,

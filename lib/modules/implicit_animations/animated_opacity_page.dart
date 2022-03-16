@@ -77,8 +77,8 @@ class _AnimatedOpacityPageState extends State<AnimatedOpacityPage> {
     );
   }
 
-  RaisedButton _noAnimationInteractiveButton() {
-    return RaisedButton(
+  ElevatedButton _noAnimationInteractiveButton() {
+    return ElevatedButton(
       onPressed: () {
         setState(() {
           _isFirstContainerVisible = !_isFirstContainerVisible;

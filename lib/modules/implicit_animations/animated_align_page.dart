@@ -9,7 +9,7 @@ class AnimatedAlignPage extends StatefulWidget {
 }
 
 class _AnimatedAlignPageState extends State<AnimatedAlignPage> {
-  Alignment _alignmentOption;
+  Alignment _alignmentOption = Alignment.center;
 
   void _changeContainerAlignment() {
     setState(() {
@@ -49,16 +49,12 @@ class _AnimatedAlignPageState extends State<AnimatedAlignPage> {
                     "AnimatedAlign provides you an animation to the position of it's child when the given alignment parameter changes.",
                     style: Theme.of(context).textTheme.bodyText1,
                   ),
-                  SizedBox(
-                    height: 10,
-                  ),
+                  SizedBox(height: 10),
                   Text(
                     "You can choose between all types of aligment and place your container at the bottom, center or top of the screen (all options switching between left side, rigth side and center).",
                     style: Theme.of(context).textTheme.bodyText1,
                   ),
-                  SizedBox(
-                    height: 10,
-                  ),
+                  SizedBox(height: 10),
                   Text(
                     "Tap the container and it's alignment will change randomnly.",
                     style: Theme.of(context).textTheme.bodyText1,
@@ -74,7 +70,7 @@ class _AnimatedAlignPageState extends State<AnimatedAlignPage> {
   AnimatedAlign _alignContainer() {
     return AnimatedAlign(
       duration: Duration(milliseconds: 500),
-      alignment: _alignmentOption ?? Alignment.center,
+      alignment: _alignmentOption,
       child: InkWell(
         child: Container(
           color: Colors.blue,

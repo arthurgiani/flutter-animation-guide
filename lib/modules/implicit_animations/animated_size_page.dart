@@ -20,28 +20,22 @@ class _AnimatedSizePageState extends State<AnimatedSizePage>
               "AnimatedSize creates a widget that animates its size to match it child's size. It's very useful to show just a few itens of a list and choose when to show them all or not.",
               style: Theme.of(context).textTheme.bodyText1,
             ),
-            SizedBox(
-              height: 10,
-            ),
+            SizedBox(height: 10),
             Text(
               "Below this text there's an example where the first item of a list is shown. In order to show all items of this list, just press the button and the animation will be done.",
               style: Theme.of(context).textTheme.bodyText1,
             ),
             _animatedList(),
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: 20),
             _expandListButton(),
           ],
         ));
   }
 
-  RaisedButton _expandListButton() {
-    return RaisedButton(
-      color: Colors.blue,
+  ElevatedButton _expandListButton() {
+    return ElevatedButton(
       child: Text(
         _isItemsListExpanded ? "Hide" : "Show all",
-        style: TextStyle(color: Colors.white),
       ),
       onPressed: () {
         setState(() {
@@ -54,7 +48,6 @@ class _AnimatedSizePageState extends State<AnimatedSizePage>
   AnimatedSize _animatedList() {
     return AnimatedSize(
       duration: Duration(milliseconds: 400),
-      vsync: this,
       child: ListView.builder(
           physics: ScrollPhysics(),
           shrinkWrap: true,

@@ -7,8 +7,6 @@ class ColorTweenPage extends StatefulWidget {
 }
 
 class _ColorTweenPageState extends State<ColorTweenPage> {
-  static final _tweenColorAnimation =
-      ColorTween(begin: Colors.black, end: Colors.red);
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
@@ -25,16 +23,25 @@ class _ColorTweenPageState extends State<ColorTweenPage> {
             style: Theme.of(context).textTheme.bodyText1,
           ),
           SizedBox(height: 20),
-          TweenAnimationBuilder(
-              tween: _tweenColorAnimation,
-              duration: Duration(seconds: 10),
-              child: Image.asset('images/flutter_logo.png'),
-              builder: (_, Color color, child) {
-                return ColorFiltered(
-                  child: child,
-                  colorFilter: ColorFilter.mode(color, BlendMode.modulate),
-                );
-              })
+
+          //After dart migration to null safety, ColorTween begin and end
+          //paramers can be null, so we need to type TweenAnimationBuilder<Color?>
+          //and also set Color property in builder paramer as nullable as well.
+
+          TweenAnimationBuilder<Color?>(
+            tween: ColorTween(begin: Colors.red, end: Colors.green),
+            duration: Duration(seconds: 10),
+            child: Image.asset('images/flutter_logo.png'),
+            builder: (_, Color? color, child) {
+              return ColorFiltered(
+                child: child,
+                colorFilter: ColorFilter.mode(
+                  color ?? Colors.transparent,
+                  BlendMode.modulate,
+                ),
+              );
+            },
+          )
         ],
       ),
     );

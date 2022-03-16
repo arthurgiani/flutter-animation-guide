@@ -29,16 +29,12 @@ class _AnimatedDefaultTextStylePageState
             "If flutter offers animated effects for containers, alignments, opacity and many more, why can't texts have their own built-in implicit animation?",
             style: Theme.of(context).textTheme.bodyText1,
           ),
-          SizedBox(
-            height: 10,
-          ),
+          SizedBox(height: 10),
           Text(
             "Using AnimatedDefaultTextStyle, you can set smooth transition for all parametes of a TextStyle. Tap the button and see how powerful this widget could be.",
             style: Theme.of(context).textTheme.bodyText1,
           ),
-          SizedBox(
-            height: 30,
-          ),
+          SizedBox(height: 30),
           AnimatedDefaultTextStyle(
             duration: Duration(milliseconds: 500),
             child: _isAlternativeTextStyleSelected
@@ -48,14 +44,10 @@ class _AnimatedDefaultTextStylePageState
                 ? _alternativeTextStyle
                 : _defaultTextStyle,
           ),
-          SizedBox(
-            height: 20,
-          ),
-          RaisedButton(
-            color: Theme.of(context).primaryColor,
+          SizedBox(height: 20),
+          ElevatedButton(
             child: Text(
               "Change style",
-              style: TextStyle(color: Colors.white),
             ),
             onPressed: () {
               setState(() {

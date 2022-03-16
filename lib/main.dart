@@ -12,13 +12,22 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-          textTheme: TextTheme(
-              headline1: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
-              headline2: TextStyle(fontSize: 20),
-              bodyText1: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-              bodyText2: TextStyle(fontSize: 12, fontWeight: FontWeight.normal))),
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        textTheme: TextTheme(
+          headline1: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+          headline2: TextStyle(fontSize: 20),
+          bodyText1: TextStyle(fontSize: 14),
+          bodyText2: TextStyle(fontSize: 12),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all<Color>(
+              Theme.of(context).primaryColor,
+            ),
+          ),
+        ),
+      ),
       home: LandingPage(),
     );
   }

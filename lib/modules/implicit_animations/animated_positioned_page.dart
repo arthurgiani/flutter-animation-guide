@@ -9,16 +9,17 @@ class AnimatedPositionedPage extends StatefulWidget {
 }
 
 class _AnimatedPositionedPageState extends State<AnimatedPositionedPage> {
-  double _containerTopValue;
-  double _containerLeftValue;
+  double? _containerTopValue;
+  double? _containerLeftValue;
   final _randomNumberGenerator = Random();
 
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-        needScrollScreen: false,
-        title: Text("AnimatedPositioned"),
-        body: LayoutBuilder(builder: (context, constraints) {
+      needScrollScreen: false,
+      title: Text("AnimatedPositioned"),
+      body: LayoutBuilder(
+        builder: (context, constraints) {
           return Container(
             height: constraints.maxHeight,
             width: constraints.maxHeight,
@@ -30,9 +31,7 @@ class _AnimatedPositionedPageState extends State<AnimatedPositionedPage> {
                       "AnimatedPositioned allows us to set animations when we want to change the parameters of a Positioned, which gives you the power to put a widget in any place of the screen using its parameters rigth, left, top and bottom.",
                       style: Theme.of(context).textTheme.bodyText1,
                     ),
-                    SizedBox(
-                      height: 10,
-                    ),
+                    SizedBox(height: 10),
                     Text(
                       "Tap the blue container and you'll see that it can be in any pixel of the screen using a smooth transition animation. To return the container to the initial position, just press the reset button.",
                       style: Theme.of(context).textTheme.bodyText1,
@@ -44,7 +43,9 @@ class _AnimatedPositionedPageState extends State<AnimatedPositionedPage> {
               ],
             ),
           );
-        }));
+        },
+      ),
+    );
   }
 
   Align _resetButton(BoxConstraints constraints) {
@@ -63,7 +64,9 @@ class _AnimatedPositionedPageState extends State<AnimatedPositionedPage> {
   }
 
   AnimatedPositioned _animatedPositionedContainer(
-      BoxConstraints constraints, BuildContext context) {
+    BoxConstraints constraints,
+    BuildContext context,
+  ) {
     return AnimatedPositioned(
       top: _containerTopValue ?? (constraints.maxHeight / 2) - 50,
       left: _containerLeftValue ?? (constraints.maxWidth / 2) - 50,
@@ -73,10 +76,11 @@ class _AnimatedPositionedPageState extends State<AnimatedPositionedPage> {
           height: 100,
           width: 100,
           child: Center(
-              child: Text(
-            "Tap me!",
-            style: TextStyle(color: Colors.white),
-          )),
+            child: Text(
+              "Tap me!",
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
         ),
         onTap: () {
           setState(() {

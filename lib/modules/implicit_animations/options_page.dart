@@ -25,59 +25,31 @@ class _ImplicitAnimationsOptionsPageState
       title: Text("Implicit Animations"),
       body: Center(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            SizedBox(
-                width: MediaQuery.of(context).size.width * 0.6,
-                child: CustomButton(
-                    text: "1. Intro",
-                    onPressed: () =>
-                        push(context, ImplicitAnimationsIntroPage()))),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.6,
-              child: CustomButton(
-                  text: "2. AnimatedContainer",
-                  onPressed: () => push(context, AnimatedContainerPage())),
-            ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.6,
-              child: CustomButton(
-                  text: "3. AnimatedPositioned",
-                  onPressed: () => push(context, AnimatedPositionedPage())),
-            ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.6,
-              child: CustomButton(
-                  text: "4. AnimatedOpacity",
-                  onPressed: () => push(context, AnimatedOpacityPage())),
-            ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.6,
-              child: CustomButton(
-                  text: "5. AnimatedAlign",
-                  onPressed: () => push(context, AnimatedAlignPage())),
-            ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.6,
-              child: CustomButton(
+            CustomButton(
+                text: "1. Intro",
+                onPressed: () => push(context, ImplicitAnimationsIntroPage())),
+            CustomButton(
+                text: "2. AnimatedContainer",
+                onPressed: () => push(context, AnimatedContainerPage())),
+            CustomButton(
+                text: "3. AnimatedPositioned",
+                onPressed: () => push(context, AnimatedPositionedPage())),
+            CustomButton(
+                text: "4. AnimatedOpacity",
+                onPressed: () => push(context, AnimatedOpacityPage())),
+            CustomButton(
+                text: "5. AnimatedAlign",
+                onPressed: () => push(context, AnimatedAlignPage())),
+            CustomButton(
                 text: "6. AnimatedSize",
-                onPressed: () => push(context, AnimatedSizePage())
-              ),
-            ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.6,
-              child: CustomButton(
+                onPressed: () => push(context, AnimatedSizePage())),
+            CustomButton(
                 text: "7. AnimatedDefaultTextStyle",
-                onPressed: () => push(context, AnimatedDefaultTextStylePage())
-              ),
-            ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.6,
-              child: CustomButton(
+                onPressed: () => push(context, AnimatedDefaultTextStylePage())),
+            CustomButton(
                 text: "8. Curves",
-                onPressed: () => push(context, CurvesPage())
-              ),
-            ),
+                onPressed: () => push(context, CurvesPage())),
           ],
         ),
       ),

@@ -60,8 +60,11 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
     return AnimatedContainer(
       duration: Duration(milliseconds: 500),
       decoration: BoxDecoration(
-          color: _thirdContainerColor,
-          borderRadius: BorderRadius.circular(_thirdContainerBorderRadius)),
+        color: _thirdContainerColor,
+        borderRadius: BorderRadius.circular(
+          _thirdContainerBorderRadius,
+        ),
+      ),
       height: 100,
       width: _thirdContainerWidth,
       child: Center(
@@ -77,7 +80,7 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
     return Row(
       children: <Widget>[
         Expanded(
-            child: RaisedButton(
+            child: ElevatedButton(
           onPressed: () {
             setState(() {
               _thirdContainerColor = Color.fromRGBO(
@@ -91,7 +94,7 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
         )),
         SizedBox(width: 20),
         Expanded(
-            child: RaisedButton(
+            child: ElevatedButton(
           onPressed: () {
             setState(() {
               _thirdContainerBorderRadius =
@@ -102,7 +105,7 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
         )),
         SizedBox(width: 20),
         Expanded(
-            child: RaisedButton(
+            child: ElevatedButton(
           onPressed: () {
             setState(() {
               _thirdContainerWidth =

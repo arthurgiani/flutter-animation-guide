@@ -10,7 +10,7 @@ class ExplicitAnimationsIntroPage extends StatefulWidget {
 class _ExplicitAnimationsIntroPageState
     extends State<ExplicitAnimationsIntroPage>
     with SingleTickerProviderStateMixin {
-  AnimationController _firstContainerAnimationController;
+  late final AnimationController _firstContainerAnimationController;
 
   @override
   void initState() {
@@ -41,31 +41,21 @@ class _ExplicitAnimationsIntroPageState
               ),
             ],
           ),
-          SizedBox(
-            height: 20,
-          ),
+          SizedBox(height: 20),
           Text(
             "As we said in the beginning of this tutorial, you should to use explicit animations when you want to have total control of your animation process. Now, you can start, stop and repeat them whenever you want, and many other features that you can use.",
             style: Theme.of(context).textTheme.bodyText1,
           ),
-          SizedBox(
-            height: 15,
-          ),
+          SizedBox(height: 15),
           Text(
             "In the example below you can see a red container wrapped in a widget called RotationTranstion. Just like that, you have many other built-in widgets that is very similiar to those you used in Implicit Animation section, such as Align, Positioned, Scale and many more.",
             style: Theme.of(context).textTheme.bodyText1,
           ),
-          SizedBox(
-            height: 40,
-          ),
+          SizedBox(height: 40),
           _firstContainer(),
-          SizedBox(
-            height: 40,
-          ),
+          SizedBox(height: 40),
           _firstContainerButtonsRow1(),
-          SizedBox(
-            height: 20,
-          ),
+          SizedBox(height: 20),
           _firstContainerButtonsRow2()
         ],
       ),
@@ -90,26 +80,22 @@ class _ExplicitAnimationsIntroPageState
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Expanded(
-            child: FlatButton(
+            child: ElevatedButton(
               child: Text(
                 "Repeat",
                 style: TextStyle(color: Colors.white),
               ),
               onPressed: () => _firstContainerAnimationController.repeat(),
-              color: Colors.blue,
             ),
           ),
-          SizedBox(
-            width: 10,
-          ),
+          SizedBox(width: 10),
           Expanded(
-            child: FlatButton(
+            child: ElevatedButton(
               child: Text(
                 "Reset",
                 style: TextStyle(color: Colors.white),
               ),
               onPressed: () => _firstContainerAnimationController.reset(),
-              color: Colors.blue,
             ),
           ),
         ],
@@ -124,39 +110,32 @@ class _ExplicitAnimationsIntroPageState
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Expanded(
-            child: FlatButton(
+            child: ElevatedButton(
               child: Text(
                 "Start",
                 style: TextStyle(color: Colors.white),
               ),
               onPressed: () => _firstContainerAnimationController.forward(),
-              color: Colors.blue,
             ),
           ),
-          SizedBox(
-            width: 10,
-          ),
+          SizedBox(width: 10),
           Expanded(
-            child: FlatButton(
+            child: ElevatedButton(
               child: Text(
                 "Reverse",
                 style: TextStyle(color: Colors.white),
               ),
               onPressed: () => _firstContainerAnimationController.reverse(),
-              color: Colors.blue,
             ),
           ),
-          SizedBox(
-            width: 10,
-          ),
+          SizedBox(width: 10),
           Expanded(
-            child: FlatButton(
+            child: ElevatedButton(
               child: Text(
                 "Stop",
                 style: TextStyle(color: Colors.white),
               ),
               onPressed: () => _firstContainerAnimationController.stop(),
-              color: Colors.blue,
             ),
           ),
         ],

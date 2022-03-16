@@ -3,15 +3,18 @@ import 'package:flutter_animation_guide/components/custom_button.dart';
 import 'package:flutter_animation_guide/components/custom_scaffold.dart';
 import 'package:flutter_animation_guide/modules/tween_animation_builder/color_tween_page.dart';
 import 'package:flutter_animation_guide/modules/tween_animation_builder/rotation_animation_page.dart';
+
 import '../../navigation.dart';
 import 'intro_page.dart';
 
 class TweenAnimationBuilderOptionsPage extends StatefulWidget {
   @override
-  _TweenAnimationBuilderOptionsPageState createState() => _TweenAnimationBuilderOptionsPageState();
+  _TweenAnimationBuilderOptionsPageState createState() =>
+      _TweenAnimationBuilderOptionsPageState();
 }
 
-class _TweenAnimationBuilderOptionsPageState extends State<TweenAnimationBuilderOptionsPage> {
+class _TweenAnimationBuilderOptionsPageState
+    extends State<TweenAnimationBuilderOptionsPage> {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
@@ -20,24 +23,27 @@ class _TweenAnimationBuilderOptionsPageState extends State<TweenAnimationBuilder
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.6,
-                  child: CustomButton(
-                      text: "1. Intro",
-                      onPressed: () =>
-                          push(context, TweenAnimationBuilderIntroPage()))),
-            SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.6,
-                  child: CustomButton(
-                      text: "2. Rotation Animation",
-                      onPressed: () =>
-                          push(context, RotationAnimationPage()))),
-            SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.6,
-                  child: CustomButton(
-                      text: "3. ColorTween",
-                      onPressed: () =>
-                          push(context, ColorTweenPage()))),
+            CustomButton(
+              text: "1. Intro",
+              onPressed: () => push(
+                context,
+                TweenAnimationBuilderIntroPage(),
+              ),
+            ),
+            CustomButton(
+              text: "2. Rotation Animation",
+              onPressed: () => push(
+                context,
+                RotationAnimationPage(),
+              ),
+            ),
+            CustomButton(
+              text: "3. ColorTween",
+              onPressed: () => push(
+                context,
+                ColorTweenPage(),
+              ),
+            ),
           ],
         ),
       ),

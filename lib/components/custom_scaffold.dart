@@ -4,13 +4,13 @@ class CustomScaffold extends StatefulWidget {
   final Text title;
   final Widget body;
   final bool scaffoldEnabled;
-  final FloatingActionButton floatingActionButton;
+  final FloatingActionButton? floatingActionButton;
   final bool needScrollScreen;
 
   const CustomScaffold(
-      {Key key,
-      this.title,
-      this.body,
+      {Key? key,
+      required this.title,
+      required this.body,
       this.scaffoldEnabled = true,
       this.floatingActionButton,
       this.needScrollScreen = true})

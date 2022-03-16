@@ -9,9 +9,9 @@ class CustomInterpolationPage extends StatefulWidget {
 
 class _CustomInterpolationPageState extends State<CustomInterpolationPage>
     with SingleTickerProviderStateMixin {
-  AnimationController _firstContainerAnimationController;
-  Animation _scaleTransition;
-  Animation _colorTransition;
+  late final AnimationController _firstContainerAnimationController;
+  late final Animation<double> _scaleTransition;
+  late final Animation _colorTransition;
 
   @override
   void initState() {
@@ -24,9 +24,11 @@ class _CustomInterpolationPageState extends State<CustomInterpolationPage>
     _scaleTransition = Tween<double>(begin: 0, end: 1)
         .animate(_firstContainerAnimationController);
     _colorTransition = ColorTween(begin: Colors.red, end: Colors.blue).animate(
-        CurvedAnimation(
-            parent: _firstContainerAnimationController,
-            curve: Interval(0.5, 1.0)));
+      CurvedAnimation(
+        parent: _firstContainerAnimationController,
+        curve: Interval(0.5, 1.0),
+      ),
+    );
   }
 
   @override
@@ -57,38 +59,33 @@ class _CustomInterpolationPageState extends State<CustomInterpolationPage>
             "Since you have total control of your interpolation process with AnimationController, now you can create custom interpolations for your animation.",
             style: Theme.of(context).textTheme.bodyText1,
           ),
-          SizedBox(
-            height: 15,
-          ),
+          SizedBox(height: 15),
           Text(
             "Imagine that you want to perform an Animation of 5 seconds in a Container with two parameters: Scale and Color. It starts growing to it's maximum size at the same time that it's color is changing from red to blue. Until now is it known as a 'normal' animation. But what if you want to start the color interpolation from the half to the end of the animation period (from 2.5 to 5 seconds?) ",
             style: Theme.of(context).textTheme.bodyText1,
           ),
-          SizedBox(
-            height: 15,
-          ),
+          SizedBox(height: 15),
           Text(
             "You can do this using AnimationController!",
             style: Theme.of(context).textTheme.bodyText1,
           ),
-          SizedBox(
-            height: 25,
-          ),
+          SizedBox(height: 25),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               AnimatedBuilder(
-                  animation: _firstContainerAnimationController,
-                  builder: (context, _) {
-                    return ScaleTransition(
-                      scale: _scaleTransition,
-                      child: Container(
-                        color: _colorTransition.value,
-                        height: 200,
-                        width: 200,
-                      ),
-                    );
-                  })
+                animation: _firstContainerAnimationController,
+                builder: (context, _) {
+                  return ScaleTransition(
+                    scale: _scaleTransition,
+                    child: Container(
+                      color: _colorTransition.value,
+                      height: 200,
+                      width: 200,
+                    ),
+                  );
+                },
+              )
             ],
           )
         ],

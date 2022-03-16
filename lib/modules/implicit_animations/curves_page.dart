@@ -98,11 +98,9 @@ class _CurvesPageState extends State<CurvesPage> {
     return Row(
       children: <Widget>[
         Expanded(
-          child: RaisedButton(
-            color: Theme.of(context).primaryColor,
+          child: ElevatedButton(
             child: Text(
               _isFirstContainersSelected ? "Shrink back" : "Expand",
-              style: TextStyle(color: Colors.white),
             ),
             onPressed: () {
               setState(() {
@@ -115,11 +113,9 @@ class _CurvesPageState extends State<CurvesPage> {
           width: 10,
         ),
         Expanded(
-          child: RaisedButton(
-            color: Theme.of(context).primaryColor,
+          child: ElevatedButton(
             child: Text(
               _isSecondContainersSelected ? "Shrink back" : "Expand",
-              style: TextStyle(color: Colors.white),
             ),
             onPressed: () {
               setState(() {
@@ -132,11 +128,9 @@ class _CurvesPageState extends State<CurvesPage> {
           width: 10,
         ),
         Expanded(
-          child: RaisedButton(
-            color: Theme.of(context).primaryColor,
+          child: ElevatedButton(
             child: Text(
               _isThirdContainersSelected ? "Shrink back" : "Expand",
-              style: TextStyle(color: Colors.white),
             ),
             onPressed: () {
               setState(() {
