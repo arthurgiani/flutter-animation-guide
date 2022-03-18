@@ -34,26 +34,21 @@ class _ExpansionTileHandMadePageState extends State<ExpansionTileHandMadePage>
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-        title: Text("Handmade ExpansionTile"),
-        body: Column(
-          children: <Widget>[
-            Text(
-              "Example of implementation of an ExpansionTile widget to understand what happens under the hood.",
-              style: Theme.of(context).textTheme.bodyText1,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            _animatedList(),
-            SizedBox(
-              height: 20,
-            ),
-            _expandListButton(),
-            SizedBox(
-              height: 20,
-            ),
-          ],
-        ));
+      title: Text("Handmade ExpansionTile"),
+      body: Column(
+        children: <Widget>[
+          Text(
+            "Example of implementation of an ExpansionTile widget to understand what happens under the hood.",
+            style: Theme.of(context).textTheme.bodyText1,
+          ),
+          SizedBox(height: 10),
+          _animatedList(),
+          SizedBox(height: 20),
+          _expandListButton(),
+          SizedBox(height: 20),
+        ],
+      ),
+    );
   }
 
   ElevatedButton _expandListButton() {

@@ -15,9 +15,10 @@ class _ExplicitAnimationsIntroPageState
   @override
   void initState() {
     _firstContainerAnimationController = AnimationController(
-      vsync: this,
-      duration: Duration(seconds: 2),
-    );
+        vsync: this,
+        duration: Duration(seconds: 2),
+        lowerBound: 0,
+        upperBound: 1);
     super.initState();
   }
 
