@@ -132,25 +132,18 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
         });
   }
 
-  InkWell _secondContainerWidget() {
-    return InkWell(
-      child: AnimatedContainer(
-        duration: Duration(milliseconds: 500),
-        height: _secondContainerHeightAndWidth,
-        width: _secondContainerHeightAndWidth,
-        color: Colors.blue,
-        child: Center(
-          child: Text(
-            "Use the slider to see my transformation!",
-            textAlign: TextAlign.center,
-          ),
+  Widget _secondContainerWidget() {
+    return AnimatedContainer(
+      duration: Duration(milliseconds: 500),
+      height: _secondContainerHeightAndWidth,
+      width: _secondContainerHeightAndWidth,
+      color: Colors.blue,
+      child: Center(
+        child: Text(
+          "Use the slider to see my transformation!",
+          textAlign: TextAlign.center,
         ),
       ),
-      onTap: () {
-        setState(() {
-          _isFirstContainerExpanded = !_isFirstContainerExpanded;
-        });
-      },
     );
   }
 
