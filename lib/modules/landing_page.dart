@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animation_guide/components/custom_button.dart';
+import 'package:flutter_animation_guide/modules/animate_across_screens/animate_across_screen_intro_page.dart';
 import 'package:flutter_animation_guide/modules/explicit_animations/options_page.dart';
+import 'package:flutter_animation_guide/modules/lottie/lottie_animations_page.dart';
 import 'package:flutter_animation_guide/modules/tween_animation_builder/options_page.dart';
 import 'package:flutter_animation_guide/navigation.dart';
 
@@ -21,7 +23,7 @@ class _LandingPageState extends State<LandingPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Image.asset('images/flutter_logo.png', width: 200),
+              Image.asset('assets/images/flutter_logo.png', width: 200),
               SizedBox(height: 30),
               Text(
                 "Animation Tutorial Guide",
@@ -47,7 +49,21 @@ class _LandingPageState extends State<LandingPage> {
                 ),
               ),
               CustomButton(
-                text: "4. Example Gallery",
+                text: "4. Animate across screens",
+                onPressed: () => push(
+                  context,
+                  AnimateAcrossScreenIntroPage(),
+                ),
+              ),
+              CustomButton(
+                text: "5. Lottie Animations",
+                onPressed: () => push(
+                  context,
+                  LottieAnimationsPage(),
+                ),
+              ),
+              CustomButton(
+                text: "5. Example Gallery",
                 onPressed: () => push(
                   context,
                   ExampleGaleryOptionsPage(),

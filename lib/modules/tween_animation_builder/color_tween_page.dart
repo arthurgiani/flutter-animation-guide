@@ -31,7 +31,7 @@ class _ColorTweenPageState extends State<ColorTweenPage> {
           TweenAnimationBuilder<Color?>(
             tween: ColorTween(begin: Colors.red, end: Colors.green),
             duration: Duration(seconds: 10),
-            child: Image.asset('images/flutter_logo.png'),
+            child: Image.asset('assets/images/flutter_logo.png'),
             builder: (_, Color? color, child) {
               return ColorFiltered(
                 child: child,

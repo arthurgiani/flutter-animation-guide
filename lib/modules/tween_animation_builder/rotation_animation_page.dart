@@ -55,7 +55,7 @@ class _RotationAnimationPageState extends State<RotationAnimationPage> {
             style: Theme.of(context).textTheme.bodyText1,
           ),
           SizedBox(height: 10),
-          Image.asset('images/wrong_tween_builder_example.png'),
+          Image.asset('assets/images/wrong_tween_builder_example.png'),
           SizedBox(height: 10),
           Text(
             "Note that the container is being built inside the 'build' method so its been rebuilt over and over again during animation process, but in this specific case it is not been modified, isn't it? The container it's just rotating and none of the properties are changing (heigth, width, color etc).",
@@ -67,7 +67,7 @@ class _RotationAnimationPageState extends State<RotationAnimationPage> {
             style: Theme.of(context).textTheme.bodyText1,
           ),
           SizedBox(height: 10),
-          Image.asset('images/correct_tween_builder_example.png'),
+          Image.asset('assets/images/correct_tween_builder_example.png'),
           SizedBox(height: 10),
           Text(
             "Now, your container will be build only once saving device memory and increasing your app performance.",
