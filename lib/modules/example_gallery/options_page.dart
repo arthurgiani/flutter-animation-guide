@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animation_guide/components/custom_button.dart';
 import 'package:flutter_animation_guide/components/custom_scaffold.dart';
+import 'package:flutter_animation_guide/modules/example_gallery/page_view_button_animation_page.dart';
 import 'package:flutter_animation_guide/navigation.dart';
 
 import 'expansion_tile_hand_made_page.dart';
 
 class ExampleGaleryOptionsPage extends StatefulWidget {
   @override
-  _ExampleGaleryOptionsPageState createState() => _ExampleGaleryOptionsPageState();
+  _ExampleGaleryOptionsPageState createState() =>
+      _ExampleGaleryOptionsPageState();
 }
 
 class _ExampleGaleryOptionsPageState extends State<ExampleGaleryOptionsPage> {
@@ -32,11 +34,15 @@ class _ExampleGaleryOptionsPageState extends State<ExampleGaleryOptionsPage> {
             Center(
               child: Column(
                 children: [
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.6,
-                    child: CustomButton(
-                      text: "1. Handmade ExpansionTile",
-                      onPressed: () => push(context, ExpansionTileHandMadePage()),
+                  CustomButton(
+                    text: "1. Handmade ExpansionTile",
+                    onPressed: () => push(context, ExpansionTileHandMadePage()),
+                  ),
+                  CustomButton(
+                    text: "2. PageView Button Animation",
+                    onPressed: () => push(
+                      context,
+                      PagewViewButtonAnimationPage(),
                     ),
                   ),
                 ],
