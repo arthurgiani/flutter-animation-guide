@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animation_guide/components/custom_button.dart';
 import 'package:flutter_animation_guide/components/custom_scaffold.dart';
+import 'package:flutter_animation_guide/modules/example_gallery/animated_carousel_page.dart';
+import 'package:flutter_animation_guide/modules/example_gallery/checklist_scale_animation.dart';
 import 'package:flutter_animation_guide/modules/example_gallery/page_view_button_animation_page.dart';
 import 'package:flutter_animation_guide/navigation.dart';
 
@@ -43,6 +45,20 @@ class _ExampleGaleryOptionsPageState extends State<ExampleGaleryOptionsPage> {
                     onPressed: () => push(
                       context,
                       PagewViewButtonAnimationPage(),
+                    ),
+                  ),
+                  CustomButton(
+                    text: "3. Checklist Scale",
+                    onPressed: () => push(
+                      context,
+                      ChecklistScaleAnimation(),
+                    ),
+                  ),
+                  CustomButton(
+                    text: "4. Animated Carousel",
+                    onPressed: () => push(
+                      context,
+                      AnimatedCarouselPage(),
                     ),
                   ),
                 ],
