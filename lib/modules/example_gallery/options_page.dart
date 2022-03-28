@@ -3,6 +3,7 @@ import 'package:flutter_animation_guide/components/custom_button.dart';
 import 'package:flutter_animation_guide/components/custom_scaffold.dart';
 import 'package:flutter_animation_guide/modules/example_gallery/animated_carousel_page.dart';
 import 'package:flutter_animation_guide/modules/example_gallery/checklist_scale_animation.dart';
+import 'package:flutter_animation_guide/modules/example_gallery/credit_card_rotation_page.dart';
 import 'package:flutter_animation_guide/modules/example_gallery/page_view_button_animation_page.dart';
 import 'package:flutter_animation_guide/navigation.dart';
 
@@ -59,6 +60,13 @@ class _ExampleGaleryOptionsPageState extends State<ExampleGaleryOptionsPage> {
                     onPressed: () => push(
                       context,
                       AnimatedCarouselPage(),
+                    ),
+                  ),
+                  CustomButton(
+                    text: "5. Credit Card Rotation",
+                    onPressed: () => push(
+                      context,
+                      CreditCardRotationPage(),
                     ),
                   ),
                 ],
